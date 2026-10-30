@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adrian & Ana Júlia ♥</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe4ec;--bg2:#fff;--red:#e11d48;--pink:#f472b6;--light:#ffd1e0;--ink:#7f1d3a;--card:#ffffffee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg1:#ffe4ec;--bg2:#fff;--ink:#7f1d3a;--card:#ffffffee}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:'Quicksand',system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2) 50%,#ffc2d6);background-attachment:fixed;overflow-x:hidden;text-align:center}
+#fall{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.h{position:absolute;top:-40px;animation:fall linear infinite;user-select:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+main{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:28px 18px 60px}
+h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(46px,13vw,84px);margin:8px 0;color:var(--red);text-shadow:0 3px 12px #f472b655}
+.sub{font-size:18px;margin:0 0 20px}
+.beat{display:inline-block;font-size:64px;animation:beat 1.2s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.2)}}
+.card{background:var(--card);border-radius:24px;padding:22px 16px;margin:22px 0;box-shadow:0 10px 30px #e11d4826;border:2px solid var(--light)}
+.card h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:36px;margin:0 0 12px;color:var(--red)}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.count div{background:linear-gradient(#fff,var(--light));border-radius:16px;padding:12px 4px}
+.count b{display:block;font-size:clamp(26px,8vw,40px);color:var(--red)}
+.count span{font-size:12px;letter-spacing:1px;text-transform:uppercase}
+#env{cursor:pointer;margin:10px auto;width:240px;height:160px;position:relative;background:var(--pink);border-radius:10px;box-shadow:0 10px 24px #e11d4844;transition:transform .3s}
+#env:hover{transform:scale(1.04)}
+#env::before{content:"";position:absolute;inset:0;border-radius:10px;background:linear-gradient(135deg,transparent 49%,#0000001a 50%) , linear-gradient(225deg,transparent 49%,#0000001a 50%)}
+#env i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-style:normal;font-size:46px;animation:beat 1.2s infinite}
+#letter{display:none;text-align:left;background:#fff;border-radius:20px;padding:26px 20px;box-shadow:0 12px 34px #e11d4833;border:2px solid var(--pink);animation:pop .8s ease}
+@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.9)}to{opacity:1;transform:none}}
+#letter h3{font-family:'Great Vibes',cursive;font-weight:400;font-size:38px;margin:0 0 8px;color:var(--red)}
+#letter p{line-height:1.7;margin:10px 0;font-size:17px}
+.sign{font-family:'Great Vibes',cursive;font-size:38px;color:var(--red);text-align:right}
+.tl{list-style:none;padding:0;margin:0;text-align:left}
+.tl li{padding:10px 0 10px 34px;position:relative}
+.tl li::before{content:"♥";position:absolute;left:0;color:var(--red);animation:beat 2s infinite}
+button{font:inherit;background:var(--red);color:#fff;border:0;border-radius:30px;padding:14px 28px;font-size:18px;cursor:pointer;box-shadow:0 6px 18px #e11d4855;margin-top:8px}
+button:active{transform:scale(.95)}
+.big{font-family:'Great Vibes',cursive;font-size:clamp(40px,11vw,64px);color:var(--red);margin:0}
+.reveal{opacity:0;transform:translateY(30px);transition:all .9s}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div id="fall" aria-hidden="true"></div>
+<main>
+  <div class="beat">❤️</div>
+  <h1>Adrian & Ana Júlia</h1>
+  <p class="sub">1 mês de nós dois 💕</p>
+
+  <div class="card reveal">
+    <h2>Estamos juntos há…</h2>
+    <div class="count">
+      <div><b id="d">0</b><span>dias</span></div>
+      <div><b id="hh">0</b><span>horas</span></div>
+      <div><b id="m">0</b><span>min</span></div>
+      <div><b id="s">0</b><span>seg</span></div>
+    </div>
+    <p style="margin:14px 0 0">desde as 20:00 do dia em que você disse sim 🥹</p>
+  </div>
+
+  <div class="card reveal">
+    <h2>Uma cartinha pra você</h2>
+    <p>Toque no envelope 💌</p>
+    <div id="env" onclick="openLetter()"><i>💌</i></div>
+    <div id="letter">
+      <h3>Minha Ana Júlia,</h3>
+      <p>Hoje faz um mês que eu comecei a viver a melhor história da minha vida. Parece que foi ontem que tudo começou, e ao mesmo tempo parece que eu te conheço desde sempre.</p>
+      <p>Você deixa meus dias na escola mais leves, mais bonitos e muito mais animados. Seu sorriso é a minha parte favorita de qualquer dia, e ouvir sua risada me faz esquecer qualquer problema.</p>
+      <p>Obrigado por ser carinhosa, por ser você mesma, e por me escolher. Eu prometo cuidar de você, te respeitar e te fazer rir sempre que eu puder.</p>
+      <p>Esse é só o primeiro mês de muitos. Eu quero viver muito mais momentos ao seu lado.</p>
+      <p>Eu te amo ❤️</p>
+      <div class="sign">Adrian</div>
+    </div>
+  </div>
+
+  <div class="card reveal">
+    <h2>Por que eu gosto de você</h2>
+    <ul class="tl">
+      <li>Seu sorriso ilumina tudo</li>
+      <li>Você me faz querer ser melhor</li>
+      <li>Com você, até o intervalo da escola fica mágico</li>
+      <li>Você é linda por dentro e por fora</li>
+    </ul>
+  </div>
+
+  <div class="card reveal">
+    <h2>Uma pergunta…</h2>
+    <p>Você quer continuar sendo a minha namorada por muitos e muitos meses?</p>
+    <button onclick="yes()">Sim! 💖</button>
+    <p id="ans" class="big"></p>
+  </div>
+</main>
+
+<script>
+(function(){
+  var start=new Date(2026,8,29,20,0,0);
+  function tick(){
+    var t=Math.max(0,Math.floor((Date.now()-start)/1000));
+    document.getElementById('d').textContent=Math.floor(t/86400);
+    document.getElementById('hh').textContent=Math.floor(t%86400/3600);
+    document.getElementById('m').textContent=Math.floor(t%3600/60);
+    document.getElementById('s').textContent=t%60;
+  }
+  tick();setInterval(tick,1000);
+  var fall=document.getElementById('fall'),em=['❤️','💖','💕','🌸','💗','🩷'];
+  function heart(){
+    var e=document.createElement('div');e.className='h';
+    e.textContent=em[Math.floor(Math.random()*em.length)];
+    e.style.left=Math.random()*100+'vw';
+    e.style.fontSize=(14+Math.random()*26)+'px';
+    var d=5+Math.random()*6;
+    e.style.animationDuration=d+'s';
+    e.style.opacity=.5+Math.random()*.5;
+    fall.appendChild(e);
+    setTimeout(function(){e.remove()},d*1000);
+  }
+  setInterval(heart,280);
+  for(var i=0;i<12;i++)setTimeout(heart,i*120);
+  var obs=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+  window.openLetter=function(){
+    document.getElementById('env').style.display='none';
+    document.getElementById('letter').style.display='block';
+    for(var i=0;i<25;i++)setTimeout(heart,i*40);
+  };
+  window.yes=function(){
+    document.getElementById('ans').textContent='Eu te amo, Ana Júlia! ❤️';
+    for(var i=0;i<80;i++)setTimeout(heart,i*35);
+  };
+})();
+</script>
+</body>
+</html>
